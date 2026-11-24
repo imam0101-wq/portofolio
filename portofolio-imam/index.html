@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Imam Prasetiyo // Portofolio</title>
+    <meta name="description" content="Portofolio M Imam Prasetiyo, mahasiswa STI Universitas Muhammadiyah Kotabumi.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg: #f3f1ea;
+            --ink: #111111;
+            --card: #ffffff;
+            --accent: #ffd84d;
+            --accent2: #4ea8ff;
+            --mono: "Space Mono", ui-monospace, Consolas, monospace;
+            --head: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        html {
+            scroll-behavior: smooth
+        }
+        
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--mono);
+            font-size: 15px;
+            line-height: 1.7;
+            background-image: radial-gradient(#d8d4c6 1px, transparent 1px);
+            background-size: 20px 20px
+        }
+        
+        a {
+            color: inherit
+        }
+        
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+        
+        .box {
+            background: var(--card);
+            border: 3px solid var(--ink);
+            box-shadow: 6px 6px 0 var(--ink)
+        }
+        
+        .tag {
+            display: inline-block;
+            background: var(--accent);
+            border: 2px solid var(--ink);
+            padding: 2px 10px;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .06em;
+            text-transform: uppercase
+        }
+        /* nav */
+        
+        header.top {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--bg);
+            border-bottom: 3px solid var(--ink)
+        }
+        
+        header.top .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            padding-top: 12px;
+            padding-bottom: 12px
+        }
+        
+        .logo {
+            font-family: var(--head);
+            font-weight: 700;
+            font-size: 20px;
+            text-decoration: none
+        }
+        
+        nav {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap
+        }
+        
+        nav a {
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border: 2px solid transparent
+        }
+        
+        nav a:hover {
+            border-color: var(--ink);
+            background: var(--accent)
+        }
+        /* hero */
+        
+        .hero {
+            padding: 64px 0 48px;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 32px;
+            align-items: center
+        }
+        
+        .prompt {
+            font-size: 13px;
+            margin: 0 0 14px
+        }
+        
+        .prompt b {
+            color: #1b7f3b
+        }
+        
+        h1 {
+            font-family: var(--head);
+            font-size: clamp(2.4rem, 8vw, 4.4rem);
+            line-height: 1.02;
+            margin: 0 0 18px;
+            letter-spacing: -.03em
+        }
+        
+        h1 mark {
+            background: var(--accent);
+            padding: 0 8px;
+            border: 3px solid var(--ink)
+        }
+        
+        .lead {
+            max-width: 48ch;
+            margin: 0 0 24px
+        }
+        
+        .btns {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 11px 20px;
+            border: 3px solid var(--ink);
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 13px;
+            box-shadow: 4px 4px 0 var(--ink);
+            background: var(--card);
+            transition: transform .12s, box-shadow .12s
+        }
+        
+        .btn.main {
+            background: var(--accent)
+        }
+        
+        .btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--ink)
+        }
+        
+        .idcard {
+            padding: 22px
+        }
+        
+        .idcard h2 {
+            font-family: var(--head);
+            font-size: 1.1rem;
+            margin: 0 0 12px
+        }
+        
+        .idcard dl {
+            margin: 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 6px 14px;
+            font-size: 13px
+        }
+        
+        .idcard dt {
+            font-weight: 700
+        }
+        
+        .idcard dd {
+            margin: 0
+        }
+        
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            font-size: 12px;
+            font-weight: 700
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #26c24e;
+            border: 2px solid var(--ink)
+        }
+        /* sections */
+        
+        section {
+            padding: 48px 0;
+            scroll-margin-top: 70px
+        }
+        
+        .sec-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 26px;
+            flex-wrap: wrap
+        }
+        
+        .sec-head h2 {
+            font-family: var(--head);
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            margin: 0;
+            letter-spacing: -.02em
+        }
+        
+        .about {
+            padding: 26px
+        }
+        
+        .about p {
+            margin: 0 0 14px;
+            max-width: 64ch
+        }
+        
+        .about p:last-child {
+            margin: 0
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 26px
+        }
+        
+        .proj {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+        
+        .proj .kind {
+            font-size: 12px;
+            font-weight: 700;
+            color: #555;
+            text-transform: uppercase
+        }
+        
+        .proj h3 {
+            font-family: var(--head);
+            font-size: 1.3rem;
+            margin: 0;
+            line-height: 1.2
+        }
+        
+        .proj p {
+            margin: 0;
+            flex: 1
+        }
+        
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding: 0;
+            margin: 4px 0 0;
+            list-style: none
+        }
+        
+        .chips li {
+            border: 2px solid var(--ink);
+            padding: 1px 8px;
+            font-size: 12px;
+            background: var(--bg);
+            font-weight: 700
+        }
+        
+        .timeline {
+            display: grid;
+            gap: 24px
+        }
+        
+        .job {
+            padding: 22px
+        }
+        
+        .job .when {
+            font-size: 12px;
+            font-weight: 700;
+            background: var(--accent2);
+            display: inline-block;
+            border: 2px solid var(--ink);
+            padding: 1px 10px;
+            margin-bottom: 10px
+        }
+        
+        .job h3 {
+            font-family: var(--head);
+            margin: 0 0 4px;
+            font-size: 1.2rem
+        }
+        
+        .job .org {
+            margin: 0 0 10px;
+            font-weight: 700;
+            font-size: 13px
+        }
+        
+        .job ul {
+            margin: 0;
+            padding-left: 18px
+        }
+        
+        .fill {
+            background: #fff2b8;
+            padding: 0 4px
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 26px
+        }
+        
+        .skill {
+            padding: 20px
+        }
+        
+        .skill h3 {
+            font-family: var(--head);
+            margin: 0 0 10px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: .04em
+        }
+        
+        .skill ul {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+        
+        .skill li {
+            padding: 3px 0;
+            border-bottom: 1px dashed #bbb
+        }
+        
+        .skill li:last-child {
+            border: 0
+        }
+        
+        .contact {
+            padding: 28px
+        }
+        
+        .contact p {
+            margin: 0 0 18px;
+            max-width: 56ch
+        }
+        
+        .contact dl {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 10px 22px;
+            margin: 0
+        }
+        
+        .contact dt {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px;
+            padding-top: 2px
+        }
+        
+        .contact dd {
+            margin: 0;
+            overflow-wrap: anywhere
+        }
+        
+        footer {
+            border-top: 3px solid var(--ink);
+            padding: 22px 0 40px;
+            font-size: 13px;
+            margin-top: 20px
+        }
+        
+         :focus-visible {
+            outline: 3px solid var(--accent2);
+            outline-offset: 3px
+        }
+        
+        @media (max-width:760px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 40px
+            }
+            .box {
+                box-shadow: 4px 4px 0 var(--ink)
+            }
+        }
+        
+        @media (prefers-reduced-motion:reduce) {
+            .btn {
+                transition: none
+            }
+            html {
+                scroll-behavior: auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="top">
+        <div class="wrap">
+            <a class="logo" href="#">imam.dev</a>
+            <nav aria-label="Menu utama">
+                <a href="#tentang">Tentang</a>
+                <a href="#proyek">Proyek</a>
+                <a href="#pengalaman">Pengalaman</a>
+                <a href="#skill">Skill</a>
+                <a href="#kontak">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <div class="hero">
+            <div>
+                <p class="prompt"><b>imam@umko</b>:~$ whoami</p>
+                <h1>Imam <mark>Prasetiyo</mark></h1>
+                <p class="lead">Mahasiswa STI yang suka membuat web dan aplikasi. Saya belajar sambil membangun, dari tugas kuliah sampai proyek sendiri.</p>
+                <div class="btns">
+                    <a class="btn main" href="#proyek">Lihat proyek</a>
+                    <a class="btn" href="CV-Imam-Prasetiyo.pdf" download>Download CV [.PDF]</a>
+                    <a class="btn" href="#kontak">Hubungi saya</a>
+                </div>
+            </div>
+            <aside class="box idcard" aria-label="Kartu identitas">
+                <h2>KARTU_IDENTITAS</h2>
+                <dl>
+                    <dt>Nama</dt>
+                    <dd>M Imam Prasetiyo</dd>
+                    <dt>Kampus</dt>
+                    <dd>UMKO</dd>
+                    <dt>Prodi</dt>
+                    <dd>STI</dd>
+                    <dt>Fokus</dt>
+                    <dd>Web &amp; Mobile</dd>
+                </dl>
+                <div class="status"><span class="dot"></span> TERBUKA UNTUK KOLABORASI</div>
+            </aside>
+        </div>
+
+        <section id="tentang">
+            <div class="sec-head"><span class="tag">01</span>
+                <h2>Tentang saya</h2>
+            </div>
+            <div class="box about">
+                <p>Saya mahasiswa Universitas Muhammadiyah Kotabumi (UMKO) program studi STI. Di kuliah saya belajar pemrograman mobile, Java untuk Android, dan membuat web dengan Python.</p>
+                <p>Selain kuliah, saya senang mencoba proyek sendiri untuk mengasah kemampuan, dan saya aktif di kegiatan kepramukaan.</p>
+            </div>
+        </section>
+
+        <section id="proyek">
+            <div class="sec-head"><span class="tag">02</span>
+                <h2>Proyek</h2>
+            </div>
+            <div class="grid">
+                <article class="box proj">
+                    <span class="kind">Web · Proyek pribadi</span>
+                    <h3>Ruang Empati</h3>
+                    <p>Web tentang empati dan komunikasi empatik. Rencana berikutnya dibuat versi aplikasi Android.</p>
+                    <ul class="chips">
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>HTML/CSS</li>
+                    </ul>
+                </article>
+                <article class="box proj">
+                    <span class="kind">Mobile · Tugas kuliah</span>
+                    <h3>Inventaris Alat Pramuka</h3>
+                    <p>Aplikasi untuk mencatat peminjaman alat Pramuka dengan status tersedia atau dipinjam, datanya diambil dari server.</p>
+                    <ul class="chips">
+                        <li>Mobile</li>
+                        <li>REST API</li>
+                        <li>Server</li>
+                    </ul>
+                </article>
+                <article class="box proj">
+                    <span class="kind">Android · Tugas kuliah</span>
+                    <h3>Aplikasi Catatan</h3>
+                    <p>Aplikasi catatan sederhana yang mengingat pilihan tema gelap atau terang memakai SharedPreferences.</p>
+                    <ul class="chips">
+                        <li>Android</li>
+                        <li>Java</li>
+                        <li>SharedPreferences</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="pengalaman">
+            <div class="sec-head"><span class="tag">03</span>
+                <h2>Pengalaman</h2>
+            </div>
+            <div class="timeline">
+                <article class="box job">
+                    <span class="when">2024 – SEKARANG</span>
+                    <h3>Mahasiswa Sistem dan Teknologi Informasi</h3>
+                    <p class="org">@ Universitas Muhammadiyah Kotabumi</p>
+                    <ul>
+                        <li>Mengerjakan tugas pemrograman mobile dan web.</li>
+                        <li><span class="fill">2024</span></li>
+                    </ul>
+                </article>
+                <article class="box job">
+                    <span class="when"><span class="fill">2024</span></span>
+                    <h3><span class="fill">Dewan Kerja Cabang Lampung Utara</span></h3>
+                    <h3><span class="fill">Ikatan Mahasiswa Sistem dan Teknologi Informasispan></h3>
+                    <p class="org">@ <span class="fill">Universitas Muhammadiyah Kotabumi</span></p>
+                        <ul>
+                            <li><span class="fill">Fortofolio singkat</span></li>
+                        </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="skill">
+            <div class="sec-head"><span class="tag">04</span>
+                <h2>Skill</h2>
+            </div>
+            <div class="skills">
+                <div class="box skill">
+                    <h3>Bahasa</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>HTML &amp; CSS</li>
+                    </ul>
+                </div>
+                <div class="box skill">
+                    <h3>Framework &amp; platform</h3>
+                    <ul>
+                        <li>Flask</li>
+                        <li>Android</li>
+                    </ul>
+                </div>
+                <div class="box skill">
+                    <h3>Lainnya</h3>
+                    <ul>
+                        <li>Presentasi &amp; laporan</li>
+                        <li>Kerja kelompok</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontak">
+            <div class="sec-head"><span class="tag">05</span>
+                <h2>Kontak</h2>
+            </div>
+            <div class="box contact">
+                <p>Terbuka untuk diskusi, kerja sama proyek, atau magang. Hubungi lewat salah satu di bawah ini.</p>
+                <dl>
+                    <dt>Email</dt>
+                    <dd><span class="fill">imamm5308@gmail.com</span></dd>
+                    <dt>WhatsApp</dt>
+                    <dd><span class="fill">0812 7236 7459</span></dd>
+                    <dt>GitHub</dt>
+                    <dd><span class="fill">github.com/usernamemu</span></dd>
+                </dl>
+                <p style="margin:22px 0 0"><a class="btn main" href="CV-Imam-Prasetiyo.pdf" download>Download CV [.PDF]</a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="wrap">© 2026 M Imam Prasetiyo</div>
+    </footer>
+
+</body>
+
+</html>
